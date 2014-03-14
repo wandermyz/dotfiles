@@ -1,0 +1,29 @@
+[user]
+	email = yaliu@linkedin.com
+	name = Yang Liu
+[push]
+	default = simple
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+[color]
+        diff = auto
+
+[alias]
+co = checkout
+ci = commit
+pr = pull --rebase 
+b = branch
+st = status
+dc = review dcommit -s
+m = ls-files --modified
+d = ls-files --deleted
+l = "!git log --date=relative --pretty=format:'%h|%an|%ad|%s' -30 | awk -F '|' '{ printf \"%s %-15s %-15s %s\\\n\", $1, $2, $3, $4 }'"
+ll = log --date=relative --pretty=format:'%h%x09%an%x09%ad%x09%s'
+
