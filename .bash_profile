@@ -57,23 +57,11 @@ alias hellcs="cd ~/Projects/quasiloli/quasiloli_master/HellGame && mono ~/.vim/b
 #grep options
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;35'
 
-
-#
-# Your previous /Users/Wander/.bash_profile file was backed up as /Users/Wander/.bash_profile.macports-saved_2011-10-11_at_08:28:50
-##
+export PATH=/usr/local/bin:$PATH
+export PATH=/Applications/SenchaSDKTools-2.0.0-beta3:$PATH
+export SENCHA_SDK_TOOLS_2_0_0_BETA3="/Applications/SenchaSDKTools-2.0.0-beta3"
 
 # MacPorts Installer addition on 2011-10-11_at_08:28:50: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
-
-export PATH=/usr/local/bin:$PATH
-
-export PATH=/Applications/SenchaSDKTools-2.0.0-beta3:$PATH
-
-export SENCHA_SDK_TOOLS_2_0_0_BETA3="/Applications/SenchaSDKTools-2.0.0-beta3"
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
 
