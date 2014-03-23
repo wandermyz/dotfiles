@@ -1,7 +1,5 @@
 #set -o vi
 
-
-
 alias edit='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -w'
 alias g='git'
 alias ls='ls -hpG'
