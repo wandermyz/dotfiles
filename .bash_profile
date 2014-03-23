@@ -53,13 +53,13 @@ alias hellscript="cd /Users/Wander/Projects/quasiloli/quasiloli_master/HellGame/
 alias mice="cd ~/Projects/CarReco/fieldmice"
 alias hellcs="cd ~/Projects/quasiloli/quasiloli_master/HellGame && mono ~/.vim/bundle/Omnisharp/server/OmniSharp/bin/Release/OmniSharp.exe -p 2000 -s HellGame-csharp.sln"
 
+export PATH=/usr/local/bin:$PATH
+
+export PATH=/Applications/SenchaSDKTools-2.0.0-beta3:$PATH
+export SENCHA_SDK_TOOLS_2_0_0_BETA3="/Applications/SenchaSDKTools-2.0.0-beta3"
 
 #grep options
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;35'
-
-export PATH=/usr/local/bin:$PATH
-export PATH=/Applications/SenchaSDKTools-2.0.0-beta3:$PATH
-export SENCHA_SDK_TOOLS_2_0_0_BETA3="/Applications/SenchaSDKTools-2.0.0-beta3"
 
 # MacPorts Installer addition on 2011-10-11_at_08:28:50: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
