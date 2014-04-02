@@ -10,6 +10,8 @@ export HISTSIZE=65535
 shopt -s histappend
 #Shortcuts
 alias ls="ls -hpG"
+alias trimblank="sed -i '' -E -e's/^[ \t]+$//'"
+
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
