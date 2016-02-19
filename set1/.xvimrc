@@ -1,0 +1,29 @@
+syntax enable
+filetype plugin on
+
+set expandtab
+set smarttab
+set autoindent
+
+set ignorecase
+set smartcase
+
+let mapleader=","
+
+"Custom Keybindings
+"Swap nonatomic and strong/weak
+nmap ,b ^Wwdwdww"1P"2p<Esc>j
+
+"Mark current position and add #import
+nmap ,i ma/#import<CR>No#import<space>
+
+"Pathogen
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+"Command-T
+
+"Snipptes
+nmap ,p o//<space>FIXME:<space>ZEPHYR<space>PREMIUM<ESC>
+

@@ -1,0 +1,39 @@
+[push]
+  default = simple
+[diff]
+  #tool = diffmerge
+  tool = gvimdiff
+[merge]
+  #tool = diffmerge
+  tool = gvimdiff
+  #conflictstyle = diff3
+[difftool "diffmerge"]
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+  trustExitCode = true
+[color]
+  diff = auto
+
+[alias]
+  r = review create --no-prompt
+  co = checkout
+  ci = commit
+  pr = pull --rebase
+  mm = !b=`git cb` && git co master && git pr && git merge $b
+  fr = !b=`git cb` && git co master && git pr && git co $b && git rebase master
+  cb = rev-parse --abbrev-ref HEAD
+  b = branch
+  st = status
+  stn = status -uno
+  dc = review dcommit 
+  m = ls-files --modified
+  d = ls-files --deleted
+  cu = !rm `git ls-files -o --exclude-standard`
+  l = !git log --date=relative --pretty=format:'%h|%an|%ad|%s' -30 | awk -F '|' '{ printf \"%s %-15s %-15s %s\\\n\", $1, $2, $3, $4 }'
+  ll = log --date=relative --pretty=format:'%h%x09%an%x09%ad%x09%s'
+  bco = checkout -b
+  logk = log --graph --pretty=format:'%h %ae: %s'
+  # sb = !b=`git cb` && git fr && git dc && git mm && git push && git b -d $b
+  sb = !b=`git cb` && git fr && git mm && git push && git b -d $b
+  # tt = !git tag | sed 's/[-_.]/ /g' | sort -k1,2 -k3g -k4g -k5g

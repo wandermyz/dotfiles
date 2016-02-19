@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/yaliu/tmp'
+let g:netrw_dirhist_2='/Users/yaliu/mobile/zephyr-ios_trunk/Pods/Target Support Files'
+let g:netrw_dirhist_3='/Users/yaliu/mobile/job-seeker-ios_trunk'
+let g:netrw_dirhist_4='/Users/yaliu/workspace'
+let g:netrw_dirhist_5='/Users/yaliu/mobile/zephyr-ios/Resources/zh-Hans.lproj'
+let g:netrw_dirhist_6='/Users/yaliu/mobile/zephyr-ios'
+let g:netrw_dirhist_7='/Users/yaliu/mobile'
+let g:netrw_dirhist_8='/Users/yaliu/workspace/zephyr-api_trunk/config'
