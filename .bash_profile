@@ -1,4 +1,5 @@
 #set -o vi
+export EDITOR=vim
 
 export SVN_EDITOR="/usr/local/bin/edit --resume --wait $*"
 export ANDROID_NDK_ROOT=/Applications/Android-SDK/android-ndk
@@ -9,7 +10,8 @@ export COCOS2DX_ROOT=~/Projects/Manhattan/EngineTest/cocos2d-x/
 export PYTHONPATH=$PYTHONPATH:/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages
 export PATH=$PATH:/Applications/AdtEclipse/sdk/platform-tools
 export PATH=$PATH:/Applications/AdtEclipse/sdk/tools
-export PATH=$PATH:/Applications/play-2.2.1
+export PATH=$PATH:/Applications/play-2.2.2
+export PATH=$PATH:/Applications/VMware\ Fusion.app/Contents/Library
 
 #Grails
 export GRAILS_HOME=/Applications/grails-core
@@ -36,7 +38,7 @@ alias marked="open -a Marked"
 alias wiki="~/scripts/wiki.sh" 
 alias lesslyrics="cd /Users/Wander/Library/Application\ Support/LessLyrics/lyrics.lrcs"
 #alias mvim="open -a MacVim"
-alias scaladoc="open /opt/local/share/scala-2.10/doc/index.html"
+alias sm="cd /Users/Wander/Projects/ARTshirt/ShootMe"
 
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
@@ -48,10 +50,11 @@ export PS1="\[\033[1;32m\][\u@\h \W\[\033[0;32m\]\$(__git_ps1)\[\033[1;32m\]]\$ 
 #Temporary shortcut
 alias sb="cd /Users/Wander/Projects/SchemaBuilder/SchemaBuilderImpl/SchemaBuilder"
 alias soap="cd /Users/Wander/Projects/soap/cocos2d-x/projects/soap"
-alias hell="cd /Users/Wander/Projects/quasiloli"
+alias hell="cd /Users/Wander/Projects/quasiloli/quasiloli_master"
 alias hellscript="cd /Users/Wander/Projects/quasiloli/quasiloli_master/HellGame/Assets/scripts"
 alias mice="cd ~/Projects/CarReco/fieldmice"
 alias hellcs="cd ~/Projects/quasiloli/quasiloli_master/HellGame && mono ~/.vim/bundle/Omnisharp/server/OmniSharp/bin/Release/OmniSharp.exe -p 2000 -s HellGame-csharp.sln"
+alias shootcs="cd ~/Projects/ARTshirt/ShootMe/ShootMeUnity && mono ~/.vim/bundle/Omnisharp/server/OmniSharp/bin/Release/OmniSharp.exe -p 2000 -s ShootMeUnity-csharp.sln"
 
 export PATH=/usr/local/bin:$PATH
 
