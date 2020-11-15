@@ -17,6 +17,7 @@ alias shootcs="cd ~/Projects/ARTshirt/ShootMe/ShootMeUnity && mono ~/.vim/bundle
 # TGC
 alias skyvm="cd ~/tgc/Tools/skyvm"
 alias skynet="cd ~/tgc/Net"
+alias skygit="cd ~/tgc_git"
 alias skylevels="cd ~/tgc/Prototypes/Sky/Data/Levels"
 alias ccl="(cd ~/tgc/Net/ccl && make run)"
 alias skyandroid="cd ~/tgc/Prototypes/Sky/Sky/android"
@@ -29,7 +30,9 @@ export HISTSIZE=65535
 shopt -s histappend
 
 # Paths
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/Library/Python/3.8/bin:$PATH
+export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
 export SVN_EDITOR=vim
 
 # Android
@@ -47,8 +50,12 @@ export PATH=$PATH:$GOPATH/bin
 # NodeJS
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
+# bash completion
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
 # git completion
-source ~/.git-completion.bash
+# source ~/.git-completion.bash
 source ~/.git-prompt.sh
 export PS1="\n\[\033[1;32m\][\u@\h \w\[\033[0;32m\]\$(__git_ps1)\[\033[1;32m\]]\[\033[00m\]\n\[\033[1;32m\]$ \[\033[00m\]"
 
