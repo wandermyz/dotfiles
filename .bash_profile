@@ -24,6 +24,31 @@ alias skyandroid="cd ~/tgc/Prototypes/Sky/Sky/android"
 alias vagrant="cd ~/tgc/Tools/skyvm && PROFILE=yang vagrant"
 alias bq="docker run -it --volumes-from gcloud-config google/cloud-sdk:latest bq"
 
+function kubestage {
+    aws sso login --profile tgc-master
+    aws eks update-kubeconfig --region us-west-2 --name $1-eks-cluster --profile tgc-$1-assume
+}
+
+function stardb {
+    aws sso login --profile tgc-master
+    aws eks update-kubeconfig --region us-west-2 --name $1-eks-cluster --profile tgc-$1-assume
+    PASS=$(kubectl get secret star-pg-pass -o json -n its | jq -r .data.password | base64 -d)
+    echo "*:*:*:*:$PASS" > /tmp/pgpass
+    chmod 0600 /tmp/pgpass
+    kubectl run aurora-pg-master-tunnel-$USER \
+        --image=alpine/socat \
+        --expose=true --port=5432 \
+        tcp-listen:5432,fork,reuseaddr tcp-connect:aurora-pg-master:5432 
+    kubectl port-forward service/aurora-pg-master-tunnel 5432:5432 &
+    pid2=$!
+    sleep 1
+    PGPASSFILE=/tmp/pgpass psql -h localhost -U star 
+    rm /tmp/pgpass
+    kill -INT $pid2
+    echo "Deleting pod..."
+    kubectl delete pod aurora-pg-master-tunnel-$USER
+}
+
 # History settings
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=65535
